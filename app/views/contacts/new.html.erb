@@ -1,14 +1,56 @@
-<h1 id = "page_title">Say Hello!</h1>
-<div class = "skinny_wrapper wrapper_padding">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrapp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-    <%= form_for @contact do |f| %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <header class = "header">
+        <div class = "container">
+            <div class = "header__inner">
+                <div class = "header__logo">
+                    <%=link_to image_tag("logos/logo.png"), "http://localhost:3000/"%>
+                </div>
+                <nav class = "nav">
+                    <a class = "nav__link" href = "http://localhost:3000/contacts/new">Стань Волонтером!</a>
+                    <a class = "nav__link" href = "#">Знайти Волонтерів!</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+  <div class = "anketa">
+    <div class = "container">
+       <%= form_for @contact do |f| %>
       <%= f.label :name%><br>
       <%= f.text_field :name, required: true%>
 
       <br>
 
+      <%= f.label :phone%><br>
+      <%= f.text_field :phone, required: true%>
+
+      <br>
+
       <%= f.label :email%><br>
       <%= f.text_field :email, required: true%>
+
+      <br>
+
+      <%= f.label :date%><br>
+      <%= date_field(:user, :born_on) %>
+
+      <br>
+
+      <%= f.label :city%><br>
+      <%= f.text_field :city, required: true%>
 
       <br>
 
@@ -22,10 +64,16 @@
         <%= f.text_field :nickname, hint: 'Leave this field blank'%>
       </div>
 
+      <br>
+
       <%= f.submit 'Send Message', class: "button"%>
 
     <%end%>
-</div>
+    </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>
 
 
     

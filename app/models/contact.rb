@@ -2,7 +2,10 @@ class Contact < MailForm::Base
     attribute :name,        :validates => true
     attribute :email,       :validates => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
     attribute :message,     :validates => true
-    attribute :nickname,        :validates => true
+    attribute :nickname,    :validates => true
+    attribute :phone,       :validates => true
+    attribute :date,        :validates => true
+    attribute :city,        :validates => true
 
     def headers 
       {
