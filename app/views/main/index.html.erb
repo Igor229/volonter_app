@@ -19,8 +19,8 @@
                     <%=link_to image_tag("logos/logo.png"), "http://localhost:3000/"%>
                 </div>
                 <nav class = "nav">
-                    <a class = "nav__link" href = "http://localhost:3000/contacts/new">Стань Волонтером!</a>
-                    <a class = "nav__link" href = "#">Знайти Волонтерів!</a>
+                    <a class = "nav__link" href = "http://localhost:3000/contacts/new">Become a volunteer!</a>
+                    <a class = "nav__link" href = "#">Find volunteers!</a>
                 </nav>
             </div>
         </div>
@@ -28,9 +28,16 @@
 
 
     <div class = "intro">
-        <div class = "intro__image">
-            <%= image_tag("body/volunteer.jpg")%>
+        <div class = "container">
+           <h1 class = "intro__title">Ready to change the world?</h1>
         </div>
+    </div>
+
+    <div class = "btn">
+       <div class = "container">
+            <a class = "btn__element btn--yellow" href = "http://localhost:3000/contacts/new">I want to volunteer!</a>
+            <a class = "btn__element btn--yellow" href = "http://localhost:3000/contacts/new">I'm looking for volunteers</a>
+       </div>
     </div>
 
     <%= yield %>

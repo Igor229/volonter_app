@@ -19,8 +19,8 @@
                     <%=link_to image_tag("logos/logo.png"), "http://localhost:3000/"%>
                 </div>
                 <nav class = "nav">
-                    <a class = "nav__link" href = "http://localhost:3000/contacts/new">Стань Волонтером!</a>
-                    <a class = "nav__link" href = "#">Знайти Волонтерів!</a>
+                    <a class = "nav__link" href = "http://localhost:3000/contacts/new">Become a volunteer!</a>
+                    <a class = "nav__link" href = "#">Find volunteers!</a>
                 </nav>
             </div>
         </div>
@@ -29,8 +29,9 @@
   <div class = "anketa">
     <div class = "container">
        <%= form_for @contact do |f| %>
-      <%= f.label :name%><br>
-      <%= f.text_field :name, required: true%>
+
+        <%= f.label :name%><br>
+        <%= f.text_field :name, required: true%>
 
       <br>
 
